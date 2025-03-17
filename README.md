@@ -20,35 +20,6 @@ A Next.js application for generating Secret Santa assignments for company events
 - XLSX library for Excel file processing
 - Jest for testing
 
-## Project Structure
-
-```
-secret-santa-nextjs/
-├── components/
-│   ├── FileUpload.js
-│   ├── ResultsDisplay.js
-│   └── Layout.js
-├── lib/
-│   └── secretSantaService.js
-├── pages/
-│   ├── _app.js
-│   ├── index.js
-│   └── api/
-│       └── process-csv.js
-├── public/
-│   └── favicon.ico
-├── styles/
-│   ├── globals.css
-│   └── Home.module.css
-├── tests/
-│   └── secretSantaService.test.js
-├── jest.config.js
-├── .gitignore
-├── package.json
-├── README.md
-└── next.config.js
-```
-
 ## Installation
 
 1. Clone the repository:

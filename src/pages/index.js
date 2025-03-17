@@ -113,7 +113,6 @@ export default function Home() {
             className={styles.button}
             onClick={processSecretSanta}
             disabled={loading || !currentEmployees}
-            title={loading ? "Processing..." : "Upload files"}
           >
             {loading ? "Processing..." : "Generate Secret Santa Assignments"}
           </button>

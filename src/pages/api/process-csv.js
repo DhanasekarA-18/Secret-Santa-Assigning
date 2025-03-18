@@ -1,5 +1,3 @@
-// pages/api/process-csv.js
-
 import {
   generateSecretSantaAssignments,
   validateAssignments,

@@ -51,7 +51,7 @@
   align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 1000px;
   margin-top: 2rem;
   width: 100%;
   gap: 2rem;
@@ -59,16 +59,16 @@
 
 .card {
   margin: 0;
-  padding: 2rem;
+  padding: 2.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   transition: all 0.2s ease;
   width: 100%;
-  max-width: 400px;
-  height: 250px;
+  max-width: 480px;
+  height: auto;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -274,4 +274,78 @@
 
 .resultsTable tr:hover td {
   background-color: #f3f4f6;
+}
+.formatInfo {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: rgba(37, 99, 235, 0.03);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.formatInfo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #2563eb;
+}
+
+.formatInfo h4 {
+  margin: 0 0 0.75rem 0;
+  color: #1e40af;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formatInfo p {
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.columnList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columnItem {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #334155;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.badgeRequired {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.badgeOptional {
+  background: #f1f5f9;
+  color: #64748b;
 }

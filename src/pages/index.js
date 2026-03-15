@@ -15,6 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+
   const handleCurrentEmployeesUpload = (data) => {
     setCurrentEmployees(data);
     if (!data) {
@@ -84,6 +85,9 @@ export default function Home() {
 
         <div className={styles.grid}>
           <div className={styles.card}>
+            <span className={`${styles.badge} ${styles.badgeRequired}`}>
+              Required
+            </span>
             <h2>Current Employees</h2>
             <FileUpload
               onDataProcessed={handleCurrentEmployeesUpload}
@@ -91,11 +95,41 @@ export default function Home() {
               required={true}
             />
             {currentEmployees && (
-              <p>{currentEmployees.length} employees loaded</p>
+              <p className={styles.status}>
+                {currentEmployees.length} employees loaded
+              </p>
             )}
+
+            <div className={styles.formatInfo}>
+              <h4>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Excel Format Requirements
+              </h4>
+              <p>Please ensure your Excel file contains these columns:</p>
+              <ul className={styles.columnList}>
+                <li className={styles.columnItem}>Employee_Name</li>
+                <li className={styles.columnItem}>Employee_EmailID</li>
+              </ul>
+            </div>
           </div>
 
           <div className={styles.card}>
+            <span className={`${styles.badge} ${styles.badgeOptional}`}>
+              Optional
+            </span>
             <h2>Previous Assignments</h2>
             <FileUpload
               onDataProcessed={handlePreviousAssignmentsUpload}
@@ -103,8 +137,37 @@ export default function Home() {
               required={false}
             />
             {previousAssignments && (
-              <p>{previousAssignments.length} previous assignments loaded</p>
+              <p className={styles.status}>
+                {previousAssignments.length} previous assignments loaded
+              </p>
             )}
+
+            <div className={styles.formatInfo}>
+              <h4>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Excel Format Requirements
+              </h4>
+              <p>The optional previous year file should include:</p>
+              <ul className={styles.columnList}>
+                <li className={styles.columnItem}>Employee_Name</li>
+                <li className={styles.columnItem}>Employee_EmailID</li>
+                <li className={styles.columnItem}>Secret_Child_Name</li>
+                <li className={styles.columnItem}>Secret_Child_EmailID</li>
+              </ul>
+            </div>
           </div>
         </div>
 
